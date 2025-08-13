@@ -1,5 +1,5 @@
 # Borrowed from SAGA (https://github.com/Jumpat/SegAnyGAussians)
-#We provide partial training code here, and will release the complete code as open source later.
+# We provide partial training code here, and will release the complete code as open source later.
 
 import os
 import torch
