@@ -60,15 +60,20 @@
     <h1>Binary-Gaussian: Compact and Progressive Representation for 3D Gaussian Segmentation</h1>
     <p>Anonymous </p>
   </header>
-<!--  <section>-->
-<!--    <h2 class="center-title">Abstract</h2>-->
-<!--    <p>-->
-<!--      3D Gaussian Splatting (3D-GS) has emerged as an efficient 3D representation and a promising foundation for semantic tasks like segmentation. However, existing 3D-GS-based segmentation methods typically rely on high-dimensional category features, which introduce substantial memory overhead. Moreover, fine-grained segmentation remains challenging due to label space congestion and the lack of stable multi-granularity control mechanisms.-->
-<!--To address these limitations, we propose a coarse-to-fine binary encoding scheme for per-Gaussian category representation, which compresses each feature into a single integer via the binary-to-decimal mapping, drastically reducing memory usage. We further design a progressive training strategy that decomposes panoptic segmentation into a series of independent sub-tasks, reducing inter-class conflicts and thereby enhancing fine-grained segmentation capability.-->
-<!--Additionally, we fine-tune opacity during segmentation training to address the incompatibility between photometric rendering and semantic segmentation, which often leads to foreground-background confusion.-->
-<!--Extensive experiments on multiple benchmarks demonstrate that our method achieves state-of-the-art segmentation performance while significantly reducing memory consumption and accelerating inference.-->
-<!--    </p>-->
-<!--  </section>-->
+  
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://github.com/binarygaussian/binarygaussian/blob/main/train_binary_feature.py"
+       target="_blank"
+       style="display: inline-block;
+              padding: 10px 20px;
+              background-color: #007acc;
+              color: white;
+              text-decoration: none;
+              font-weight: bold;
+              border-radius: 5px;">
+      📄 View Code on GitHub
+    </a>
+  </div>
 
   <section>
     <h2 class="center-title">Overview</h2>
