@@ -1,41 +1,113 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">               <!-- 指定文档字符编码 -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 响应式布局：让页面在移动设备上按比例缩放 -->
-  <title>示例网站首页</title>           <!-- 浏览器标签标题 -->
-  
-  <!-- 引入外部样式表 -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- 扩展：可改成 Bootstrap、Tailwind 等，也可直接写内联 <style> -->
+  <title>Paper Title - Project Page</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+    }
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    section {
+      margin: 30px 20px;
+    }
+    /* Abstract 标题居中 */
+    .center-title {
+      text-align: center;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    .img-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 15px;
+    }
+    .img-item img {
+      width: 100%;
+      border: none;
+      border-radius: 0;
+    }
+    .caption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>欢迎来到我的示例网站</h1>
-    <nav>
-      <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">关于</a></li>
-        <li><a href="#">联系</a></li>
-      </ul>
-    </nav>
+    <h1>Binary-Gaussian: Compact and Progressive Representation for 3D Gaussian Segmentation</h1>
+    <p>Anonymous </p>
   </header>
+<!--  <section>-->
+<!--    <h2 class="center-title">Abstract</h2>-->
+<!--    <p>-->
+<!--      3D Gaussian Splatting (3D-GS) has emerged as an efficient 3D representation and a promising foundation for semantic tasks like segmentation. However, existing 3D-GS-based segmentation methods typically rely on high-dimensional category features, which introduce substantial memory overhead. Moreover, fine-grained segmentation remains challenging due to label space congestion and the lack of stable multi-granularity control mechanisms.-->
+<!--To address these limitations, we propose a coarse-to-fine binary encoding scheme for per-Gaussian category representation, which compresses each feature into a single integer via the binary-to-decimal mapping, drastically reducing memory usage. We further design a progressive training strategy that decomposes panoptic segmentation into a series of independent sub-tasks, reducing inter-class conflicts and thereby enhancing fine-grained segmentation capability.-->
+<!--Additionally, we fine-tune opacity during segmentation training to address the incompatibility between photometric rendering and semantic segmentation, which often leads to foreground-background confusion.-->
+<!--Extensive experiments on multiple benchmarks demonstrate that our method achieves state-of-the-art segmentation performance while significantly reducing memory consumption and accelerating inference.-->
+<!--    </p>-->
+<!--  </section>-->
 
-  <main>
-    <section>
-      <h2>网站简介</h2>
-      <p>这里是一个简单的示例页面，用于演示如何用 GitHub Pages 搭建静态站点。</p>
-    </section>
-    <!-- 扩展：可以添加更多 <section>，或用 <article>、<aside> 等语义标签 -->
-  </main>
+  <section>
+    <h2 class="center-title">Overview</h2>
+    <p>
+      Our method builds upon pre-trained 3D Gaussians by augmenting each Gaussian with multi-granularity, coarse-to-fine binary features.
+      During training, we keep the opacity values learnable and optimize the binary features on rendered 2D projections via a progressive contrastive learning strategy.
+      This strategy decomposes the complex segmentation task into a series of independent, localized sub-problems, thereby reducing training complexity and substantially improving the model’s capability to distinguish fine-grained categories.
+    </p>
+    <div class="img-container">
+      <div class="img-item">
+        <img src="pic/t.png" alt="Overview Image 1">
+        <div class="caption">Figure 1: Overview of Binary-Gaussian</div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Your Name. 保留所有权利。</p>
-  </footer>
-
-  <!-- 引入外部脚本 -->
-  <script src="script.js"></script>
-  <!-- 扩展：可添加 Google Analytics、第三方组件脚本等 -->
+  <section>
+    <h2 class="center-title">Visualizations on Diverse Datasets</h2>
+    <p>
+      We test the segmentation performance of our model on two other 3D datasets.
+    </p>
+    <div class="img-container">
+      <div class="img-item">
+        <img src="pic/3dovs1.png" alt="Visualization 1">
+        <div class="caption">Figure 2: Visualization on 3D-OVS: blue_sofa  </div>
+      </div>
+      <div class="img-item">
+        <img src="pic/3dovs2.png" alt="Visualization 2">
+        <div class="caption">Figure 3: Visualization on 3D-OVS: office_desk</div>
+      </div>
+      <div class="img-item">
+        <img src="pic/llff1.png" alt="Visualization 3">
+        <div class="caption">Figure 4: Visualization on LLFF: room</div>
+      </div>
+      <div class="img-item">
+        <img src="pic/llff2.png" alt="Visualization 4">
+        <div class="caption">Figure 5: Visualization on LLFF: horns</div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
